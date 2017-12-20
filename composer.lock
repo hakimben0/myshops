@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "630d5f1d19e73b0163f900453171fba5",
+    "content-hash": "5c2581ac9cf11664869118c5d1962e50",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -324,6 +324,189 @@
                 "html"
             ],
             "time": "2017-06-03T02:28:16+00:00"
+        },
+        {
+            "name": "lysenkobv/maxmind-geolite2-database",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lysenkobv/maxmind-geolite2-database.git",
+                "reference": "31cb7b412e18b2f0c74146899af371644b4d0992"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lysenkobv/maxmind-geolite2-database/zipball/31cb7b412e18b2f0c74146899af371644b4d0992",
+                "reference": "31cb7b412e18b2f0c74146899af371644b4d0992",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "keywords": [
+                "maxmind"
+            ],
+            "time": "2017-09-19T07:11:47+00:00"
+        },
+        {
+            "name": "lysenkobv/yii2-geoip",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lysenkobv/yii2-geoip.git",
+                "reference": "fd1074b8f7629d7e4fc9254131b0bda226f34b18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lysenkobv/yii2-geoip/zipball/fd1074b8f7629d7e4fc9254131b0bda226f34b18",
+                "reference": "fd1074b8f7629d7e4fc9254131b0bda226f34b18",
+                "shasum": ""
+            },
+            "require": {
+                "lysenkobv/maxmind-geolite2-database": "*",
+                "maxmind-db/reader": "~1.0",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": ">=2.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "lysenkobv\\GeoIP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bohdan Lysenko",
+                    "email": "lysenkobv@gmail.com"
+                }
+            ],
+            "description": "Yii 2 GeoIP extension. Returns country, city, lat, lng of current or specified IP (uses MaxMind's GeoIP2 databases)",
+            "keywords": [
+                "geoip",
+                "geolocation",
+                "maxmind",
+                "yii2"
+            ],
+            "time": "2017-04-25T12:38:25+00:00"
+        },
+        {
+            "name": "maxmind-db/reader",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
+                "reference": "1647820dfbcb552222fb5feb3a8387e2636394c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/1647820dfbcb552222fb5feb3a8387e2636394c9",
+                "reference": "1647820dfbcb552222fb5feb3a8387e2636394c9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "2.*",
+                "phpunit/phpunit": "4.*",
+                "satooshi/php-coveralls": "1.0.*",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "suggest": {
+                "ext-bcmath": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-gmp": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-maxminddb": "A C-based database decoder that provides significantly faster lookups"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MaxMind\\Db\\": "src/MaxMind/Db"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind DB Reader API",
+            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+            "keywords": [
+                "database",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2017-10-27T19:15:33+00:00"
+        },
+        {
+            "name": "mdmsoft/yii2-admin",
+            "version": "2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mdmsoft/yii2-admin.git",
+                "reference": "48298cb2891f728ae93e59f75802607f0ed910f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/48298cb2891f728ae93e59f75802607f0ed910f5",
+                "reference": "48298cb2891f728ae93e59f75802607f0ed910f5",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.7"
+            },
+            "require-dev": {
+                "yiisoft/yii2-codeception": "~2.0"
+            },
+            "suggest": {
+                "yiisoft/yii2-bootstrap": "Used when using layout 'left-menu', 'right-menu' or 'top-menu'"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.master": "1.0.x-dev",
+                    "dev-master": "2.x-dev"
+                },
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "mdm\\admin\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Misbahul Munir",
+                    "email": "misbahuldmunir@gmail.com"
+                }
+            ],
+            "description": "RBAC Auth manager for Yii2 ",
+            "keywords": [
+                "admin",
+                "auth",
+                "rbac",
+                "yii"
+            ],
+            "time": "2017-10-04T02:54:53+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
