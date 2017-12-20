@@ -43,7 +43,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+//                    'logout' => ['post'],
                 ],
             ],
         ];
@@ -72,8 +72,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->redirect('like/');
-//        return $this->render('index');
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }
+        return $this->render('index');
     }
 
     /**
