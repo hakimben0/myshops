@@ -9,52 +9,43 @@ $this->title = 'Nearby Shops';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<h1 class="my-4"><?= $this->title ?></h1>
 
-<div class="container">
-
-    <h1 class="my-4"><?= $this->title ?></h1>
-
-    <div class="row">
-        <?php
+<div class="row">
+    <?php
+    if(count($shops) > 0){
         foreach ($shops as $key => $shop){
             ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+            <div id="item-<?= $shop['id'] ?>" class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="<?= $shop['pic'] ?>" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Shop name</a>
+                            <a href="#"><?= $shop['name'] ?></a>
                         </h4>
-                        <p class="card-text">Description</p>
-                        <?= Html::a('<button onclick="like();" class="btn btn-success">Like</button>') ?>
-                        <?= Html::a('<button onclick="dislike();" class="btn btn-success">Dislike</button>') ?>
+                        <p class="card-text"><?= $shop['email'] ?></p>
+                        <?= Html::a('<button onclick="like('.$shop['id'].');" class="btn btn-success">Like</button>') ?>
+                        <?= Html::a('<button onclick="dislike('.$shop['id'].');" class="btn btn-danger">Dislike</button>') ?>
                     </div>
                 </div>
             </div>
             <?php
         }
-        ?>
-    </div>
-
+    } else {
+        echo 'Nothing to show!';
+    }
+    ?>
 </div>
 
 <script>
 
-    function like(){
+    function like(id){
         $.ajax({
-            url: '<?php echo $_SERVER['REQUEST_URI'] . '&racc=' ?>' + raccord,
+            url: '<?php echo $_SERVER['REQUEST_URI'] . '/action/like?id=' ?>' + id,
             type: 'GET',
             success: function(data, statut){
-                var obj = JSON.parse(data);
-                if(obj.res == "true") {
-                    if(obj.external != ''){
-                        extern.each(function() {
-                            $(this).attr('value', obj.external);
-                        });
-                        label.each(function() {
-                            $(this).html(obj.label);
-                        });
-                    }
+                if(data == "true") {
+
                 }
                 return false;
             }
@@ -64,21 +55,13 @@ $this->params['breadcrumbs'][] = $this->title;
         });
     }
 
-    function dislike(){
+    function dislike(id){
         $.ajax({
-            url: '<?php echo $_SERVER['REQUEST_URI'] . '&racc=' ?>' + raccord,
+            url: '<?php echo $_SERVER['REQUEST_URI'] . '/action/dislike?id=' ?>' + id,
             type: 'GET',
             success: function(data, statut){
-                var obj = JSON.parse(data);
-                if(obj.res == "true") {
-                    if(obj.external != ''){
-                        extern.each(function() {
-                            $(this).attr('value', obj.external);
-                        });
-                        label.each(function() {
-                            $(this).html(obj.label);
-                        });
-                    }
+                if(data == "true") {
+
                 }
                 return false;
             }

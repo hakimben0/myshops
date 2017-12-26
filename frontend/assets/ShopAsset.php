@@ -26,5 +26,3 @@ class ShopAsset extends AssetBundle
 //        'yii\bootstrap\BootstrapAsset',
     ];
 }
-
-

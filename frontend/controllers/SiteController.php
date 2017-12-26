@@ -13,6 +13,7 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\Like;
 use frontend\models\Shop;
+use frontend\components\Assistant;
 /**
  * Site controller
  */
