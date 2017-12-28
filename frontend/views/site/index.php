@@ -24,8 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             <a href="#"><?= $shop['name'] ?></a>
                         </h4>
                         <p class="card-text"><?= $shop['email'] ?></p>
-                        <?= Html::a('<button onclick="like('.$shop['id'].');" class="btn btn-success">Like</button>') ?>
-                        <?= Html::a('<button onclick="dislike('.$shop['id'].');" class="btn btn-danger">Dislike</button>') ?>
+                        <?= Html::a('<button onclick="action('.$shop['id'].',1);" class="btn btn-success">Like</button>') ?>
+                        <?= Html::a('<button onclick="action('.$shop['id'].',0);" class="btn btn-danger">Dislike</button>') ?>
                     </div>
                 </div>
             </div>
@@ -39,29 +39,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <script>
 
-    function like(id){
+    function action(id, type){
+        if (type == 0) type = "dislike";
+        else if (type == 1) type = "like";
+        else return false;
         $.ajax({
-            url: '<?php echo $_SERVER['REQUEST_URI'] . '/action/like?id=' ?>' + id,
+            url: '<?php echo Yii::$app->urlManager->createUrl('/action').'/' ?>' + type + '?id=' + id,
             type: 'GET',
             success: function(data, statut){
-                if(data == "true") {
-
-                }
-                return false;
-            }
-        }).fail(function() {
-            alert('Error');
-            return false;
-        });
-    }
-
-    function dislike(id){
-        $.ajax({
-            url: '<?php echo $_SERVER['REQUEST_URI'] . '/action/dislike?id=' ?>' + id,
-            type: 'GET',
-            success: function(data, statut){
-                if(data == "true") {
-
+                var obj = JSON.parse(data);
+                if(obj.done == "y") {
+                    document.getElementById('item-'+id).style.display = "none";
                 }
                 return false;
             }

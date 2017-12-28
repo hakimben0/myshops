@@ -4,7 +4,7 @@ use Yii;
 use backend\models\Shop;
 use backend\models\User;
 use frontend\models\Like;
-use frontend\models\LikeSearch;
+use frontend\models\Dislike;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -16,61 +16,56 @@ class ActionController extends Controller
     /**
      * @inheritdoc
      */
+
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-
                 ],
             ],
         ];
     }
 
-    public function actionLike($shop)
+    public function actionLike($id)
     {
         $res['done'] = 'n';
         $user = Yii::$app->user->id;
         $model = new Like();
         $model->user_id = $user;
-        $model->shop_id = $shop;
-        if ($model->save()) {
-            $res['done'] = 'y';
-        }
+        $model->shop_id = $id;
+        $model->date = date("Y-m-d H:i:s");
+        if ($model->save()) $res['done'] = 'y';
         echo json_encode($res);
     }
 
-    public function actionDislike($shop)
+    public function actionDislike($id)
     {
         $res['done'] = 'n';
         $user = Yii::$app->user->id;
-        $model = Like::find()->where(['user_id'=>$user, 'shop_id'=>$shop]);
-        if($model){
-            $model->
-            $res['done'] = 'y';
+        $model = Dislike::find()->where(['user_id'=>$user, 'shop_id'=>$id])->one();
+        if(!$model){
+            $model = new Dislike();
+            $model->user_id = $user;
+            $model->shop_id = $id;
         }
+        $model->date = date("Y-m-d H:i:s");
+        $model->nbr ++;
+        if($model->save()) $res['done'] = 'y';
         echo json_encode($res);
     }
 
-    public function actionRemove($shop)
+    public function actionRemove($id)
     {
         $res['done'] = 'n';
         $user = Yii::$app->user->id;
-        $model = Like::find()->where(['user_id'=>$user, 'shop_id'=>$shop]);
-        if($model){
-            $model->
-            $res['done'] = 'y';
+        $model = Like::find()->where(['user_id' => $user, 'shop_id' => $id])->one();
+        if ($model) {
+            $model->status = 0;
+            $model->date = date("Y-m-d H:i:s");
+            if ($model->save()) $res['done'] = 'y';
         }
         echo json_encode($res);
-    }
-
-    protected function findModel($id)
-    {
-        if (($model = Like::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
     }
 }

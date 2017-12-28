@@ -17,6 +17,7 @@ return [
         'geoip' => ['class' => 'lysenkobv\GeoIP\GeoIP'],
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\DbManager'
+            'defaultRoles' => ['Customer'],
         ],
     ],
     'as access' => [

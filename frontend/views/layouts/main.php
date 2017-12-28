@@ -35,28 +35,24 @@ ShopAsset::register($this);
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <?php
-                    if (Yii::$app->user->isGuest) {
-                        echo '<li class="nav-item">
-                                  <a class="nav-link" href="site/signup">Signup</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="site/login">Login</a>
-                              </li>';
-                    } else {
-                        echo '<li class="nav-item active">
-                                  <a class="nav-link" href="#">Nearby Shops
-                                      <span class="sr-only"></span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="#">My preferred Shops</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="site/logout">Logout ('. Yii::$app->user->identity->username .')</a>
-                              </li>';
-                    }
-                    ?>
+                    <?php if (Yii::$app->user->isGuest) { ?>
+                        <li class="nav-item">
+                            <?= Html::a('Signup', ['site/signup'], ['class' => 'nav-link '. (($this->context->action->id == "signup") ? 'active' : '')]) ?>
+                        </li>
+                        <li class="nav-item">
+                            <?= Html::a('Login', ['site/login'], ['class' => 'nav-link '. (($this->context->action->id == "login") ? 'active' : '')]) ?>
+                        </li>
+                    <?php } else { ?>
+                        <li class="nav-item">
+                            <?= Html::a('Nearby Shops', ['site/index'], ['class' => 'nav-link '. (($this->context->action->id == "index") ? 'active' : '')]) ?>
+                        </li>
+                        <li class="nav-item">
+                            <?= Html::a('My preferred Shops', ['site/preferred'], ['class' => 'nav-link '. (($this->context->action->id == "preferred") ? 'active' : '')]) ?>
+                        </li>
+                        <li class="nav-item">
+                            <?= Html::a('Logout ('. Yii::$app->user->identity->username .')', ['site/logout'], ['class' => 'nav-link']) ?>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

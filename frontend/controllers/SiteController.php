@@ -72,7 +72,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         if (Yii::$app->user->isGuest) {
-            return $this->redirect('site/login');
+            return $this->redirect('login');
         }
         $assist = new Assistant();
         $shops = $assist->getNearbyShops();
@@ -84,11 +84,11 @@ class SiteController extends Controller
     public function actionPreferred()
     {
         if (Yii::$app->user->isGuest) {
-            return $this->redirect('site/login');
+            return $this->redirect('login');
         }
         $assist = new Assistant();
         $shops = $assist->getPreferredShops();
-        return $this->render('index', [
+        return $this->render('preferred', [
             'shops' => $shops,
         ]);
     }
@@ -119,7 +119,7 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-        return $this->goHome();
+        return $this->redirect('login');
     }
     /**
      * Displays contact page.
