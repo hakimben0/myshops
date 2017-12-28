@@ -8,7 +8,8 @@ class Assistant
     public function getNearbyShops(){
         $user = Yii::$app->user->id;
         $ip = Yii::$app->getRequest()->getUserIP();
-        $geo = Yii::$app->geoip->ip("41.249.12.1");
+//        $geo = Yii::$app->geoip->ip("41.249.12.1");
+        $geo = Yii::$app->geoip->ip($ip);
         $lat = $geo->location->lat;
         $lng = $geo->location->lng;
 //        $city = $geo->city;
