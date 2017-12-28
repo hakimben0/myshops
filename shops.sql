@@ -1,6 +1,26 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 28, 2017 at 12:29 AM
+-- Server version: 5.7.19
+-- PHP Version: 5.6.31
 
-CREATE DATABASE IF NOT EXISTS `shops` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `shops`;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `shops`
+--
 
 -- --------------------------------------------------------
 
@@ -15,6 +35,112 @@ CREATE TABLE IF NOT EXISTS `auth_assignment` (
   `created_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`item_name`,`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `auth_assignment`
+--
+
+INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
+('@app-backend/*', '1', 1514325686),
+('@app-backend/admin/*', '1', 1514325686),
+('@app-backend/admin/assignment/*', '1', 1514325686),
+('@app-backend/admin/assignment/assign', '1', 1514325686),
+('@app-backend/admin/assignment/index', '1', 1514325686),
+('@app-backend/admin/assignment/revoke', '1', 1514325687),
+('@app-backend/admin/assignment/view', '1', 1514325687),
+('@app-backend/admin/default/*', '1', 1514325687),
+('@app-backend/admin/default/index', '1', 1514325687),
+('@app-backend/admin/menu/*', '1', 1514325687),
+('@app-backend/admin/menu/create', '1', 1514325687),
+('@app-backend/admin/menu/delete', '1', 1514325687),
+('@app-backend/admin/menu/index', '1', 1514325687),
+('@app-backend/admin/menu/update', '1', 1514325687),
+('@app-backend/admin/menu/view', '1', 1514325687),
+('@app-backend/admin/permission/*', '1', 1514325687),
+('@app-backend/admin/permission/assign', '1', 1514325687),
+('@app-backend/admin/permission/create', '1', 1514325687),
+('@app-backend/admin/permission/delete', '1', 1514325687),
+('@app-backend/admin/permission/index', '1', 1514325687),
+('@app-backend/admin/permission/remove', '1', 1514325687),
+('@app-backend/admin/permission/update', '1', 1514325687),
+('@app-backend/admin/permission/view', '1', 1514325687),
+('@app-backend/admin/role/*', '1', 1514325687),
+('@app-backend/admin/role/assign', '1', 1514325687),
+('@app-backend/admin/role/create', '1', 1514325687),
+('@app-backend/admin/role/delete', '1', 1514325688),
+('@app-backend/admin/role/index', '1', 1514325688),
+('@app-backend/admin/role/remove', '1', 1514325688),
+('@app-backend/admin/role/update', '1', 1514325688),
+('@app-backend/admin/role/view', '1', 1514325688),
+('@app-backend/admin/route/*', '1', 1514325688),
+('@app-backend/admin/route/assign', '1', 1514325688),
+('@app-backend/admin/route/create', '1', 1514325688),
+('@app-backend/admin/route/index', '1', 1514325688),
+('@app-backend/admin/route/refresh', '1', 1514325688),
+('@app-backend/admin/route/remove', '1', 1514325688),
+('@app-backend/admin/rule/*', '1', 1514325688),
+('@app-backend/admin/rule/create', '1', 1514325688),
+('@app-backend/admin/rule/delete', '1', 1514325688),
+('@app-backend/admin/rule/index', '1', 1514325688),
+('@app-backend/admin/rule/update', '1', 1514325688),
+('@app-backend/admin/rule/view', '1', 1514325688),
+('@app-backend/admin/user/*', '1', 1514325688),
+('@app-backend/admin/user/activate', '1', 1514325688),
+('@app-backend/admin/user/change-password', '1', 1514325688),
+('@app-backend/admin/user/delete', '1', 1514325688),
+('@app-backend/admin/user/index', '1', 1514325688),
+('@app-backend/admin/user/login', '1', 1514325689),
+('@app-backend/admin/user/logout', '1', 1514325689),
+('@app-backend/admin/user/request-password-reset', '1', 1514325689),
+('@app-backend/admin/user/reset-password', '1', 1514325689),
+('@app-backend/admin/user/signup', '1', 1514325689),
+('@app-backend/admin/user/view', '1', 1514325689),
+('@app-backend/gii/*', '1', 1514323588),
+('@app-backend/gii/default/*', '1', 1514323588),
+('@app-backend/gii/default/action', '1', 1514323588),
+('@app-backend/gii/default/diff', '1', 1514323588),
+('@app-backend/gii/default/index', '1', 1514323589),
+('@app-backend/gii/default/preview', '1', 1514323589),
+('@app-backend/gii/default/view', '1', 1514323589),
+('@app-backend/shop/*', '1', 1514325689),
+('@app-backend/shop/create', '1', 1514325689),
+('@app-backend/shop/delete', '1', 1514325689),
+('@app-backend/shop/index', '1', 1514325689),
+('@app-backend/shop/update', '1', 1514325689),
+('@app-backend/shop/view', '1', 1514325689),
+('@app-backend/site/*', '1', 1514325689),
+('@app-backend/site/error', '1', 1514325689),
+('@app-backend/site/index', '1', 1514325689),
+('@app-backend/site/login', '1', 1514325689),
+('@app-backend/site/logout', '1', 1514325689),
+('@app-backend/user/*', '1', 1514325689),
+('@app-backend/user/create', '1', 1514325689),
+('@app-backend/user/delete', '1', 1514325689),
+('@app-backend/user/index', '1', 1514325689),
+('@app-backend/user/update', '1', 1514325689),
+('@app-backend/user/view', '1', 1514325690),
+('@app-frontend/*', '1', 1514325690),
+('@app-frontend/action/*', '1', 1514325690),
+('@app-frontend/action/dislike', '1', 1514325690),
+('@app-frontend/action/like', '1', 1514325690),
+('@app-frontend/action/remove', '1', 1514325690),
+('@app-frontend/like/*', '1', 1514325690),
+('@app-frontend/like/create', '1', 1514325690),
+('@app-frontend/like/delete', '1', 1514325690),
+('@app-frontend/site/*', '1', 1514325690),
+('@app-frontend/site/about', '1', 1514325690),
+('@app-frontend/site/captcha', '1', 1514325690),
+('@app-frontend/site/contact', '1', 1514325690),
+('@app-frontend/site/error', '1', 1514325690),
+('@app-frontend/site/index', '1', 1514325690),
+('@app-frontend/site/login', '1', 1514325690),
+('@app-frontend/site/logout', '1', 1514325690),
+('@app-frontend/site/preferred', '1', 1514325690),
+('@app-frontend/site/request-password-reset', '1', 1514325690),
+('@app-frontend/site/reset-password', '1', 1514325690),
+('@app-frontend/site/signup', '1', 1514325690),
+('Admin', '1', 1513729178),
+('Customer', '2', 1514420429);
 
 -- --------------------------------------------------------
 
@@ -113,6 +239,104 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 ('/user/index', 2, NULL, NULL, NULL, 1513725895, 1513725895),
 ('/user/update', 2, NULL, NULL, NULL, 1513725895, 1513725895),
 ('/user/view', 2, NULL, NULL, NULL, 1513725895, 1513725895),
+('@app-backend/*', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/admin/*', 2, NULL, NULL, NULL, 1514325661, 1514325661),
+('@app-backend/admin/assignment/*', 2, NULL, NULL, NULL, 1514325658, 1514325658),
+('@app-backend/admin/assignment/assign', 2, NULL, NULL, NULL, 1514325658, 1514325658),
+('@app-backend/admin/assignment/index', 2, NULL, NULL, NULL, 1514325658, 1514325658),
+('@app-backend/admin/assignment/revoke', 2, NULL, NULL, NULL, 1514325658, 1514325658),
+('@app-backend/admin/assignment/view', 2, NULL, NULL, NULL, 1514325658, 1514325658),
+('@app-backend/admin/default/*', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/default/index', 2, NULL, NULL, NULL, 1514325658, 1514325658),
+('@app-backend/admin/menu/*', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/menu/create', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/menu/delete', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/menu/index', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/menu/update', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/menu/view', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/permission/*', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/permission/assign', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/permission/create', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/permission/delete', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/permission/index', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/permission/remove', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/permission/update', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/permission/view', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/role/*', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/role/assign', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/role/create', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/role/delete', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/role/index', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/role/remove', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/role/update', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/role/view', 2, NULL, NULL, NULL, 1514325659, 1514325659),
+('@app-backend/admin/route/*', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/route/assign', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/route/create', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/route/index', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/route/refresh', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/route/remove', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/rule/*', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/rule/create', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/rule/delete', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/rule/index', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/rule/update', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/rule/view', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/user/*', 2, NULL, NULL, NULL, 1514325661, 1514325661),
+('@app-backend/admin/user/activate', 2, NULL, NULL, NULL, 1514325661, 1514325661),
+('@app-backend/admin/user/change-password', 2, NULL, NULL, NULL, 1514325661, 1514325661),
+('@app-backend/admin/user/delete', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/user/index', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/user/login', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/user/logout', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/admin/user/request-password-reset', 2, NULL, NULL, NULL, 1514325661, 1514325661),
+('@app-backend/admin/user/reset-password', 2, NULL, NULL, NULL, 1514325661, 1514325661),
+('@app-backend/admin/user/signup', 2, NULL, NULL, NULL, 1514325661, 1514325661),
+('@app-backend/admin/user/view', 2, NULL, NULL, NULL, 1514325660, 1514325660),
+('@app-backend/gii/*', 2, NULL, NULL, NULL, 1514323572, 1514323572),
+('@app-backend/gii/default/*', 2, NULL, NULL, NULL, 1514323572, 1514323572),
+('@app-backend/gii/default/action', 2, NULL, NULL, NULL, 1514323572, 1514323572),
+('@app-backend/gii/default/diff', 2, NULL, NULL, NULL, 1514323572, 1514323572),
+('@app-backend/gii/default/index', 2, NULL, NULL, NULL, 1514323572, 1514323572),
+('@app-backend/gii/default/preview', 2, NULL, NULL, NULL, 1514323572, 1514323572),
+('@app-backend/gii/default/view', 2, NULL, NULL, NULL, 1514323572, 1514323572),
+('@app-backend/shop/*', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/shop/create', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/shop/delete', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/shop/index', 2, NULL, NULL, NULL, 1514325641, 1514325641),
+('@app-backend/shop/update', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/shop/view', 2, NULL, NULL, NULL, 1514325641, 1514325641),
+('@app-backend/site/*', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/site/error', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/site/index', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/site/login', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/site/logout', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/user/*', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/user/create', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/user/delete', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/user/index', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/user/update', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-backend/user/view', 2, NULL, NULL, NULL, 1514325642, 1514325642),
+('@app-frontend/*', 2, NULL, NULL, NULL, 1514325619, 1514325619),
+('@app-frontend/action/*', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/action/dislike', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/action/like', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/action/remove', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/like/*', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/like/create', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/like/delete', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/site/*', 2, NULL, NULL, NULL, 1514325619, 1514325619),
+('@app-frontend/site/about', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/site/captcha', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/site/contact', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/site/error', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/site/index', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/site/login', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/site/logout', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/site/preferred', 2, NULL, NULL, NULL, 1514325618, 1514325618),
+('@app-frontend/site/request-password-reset', 2, NULL, NULL, NULL, 1514325619, 1514325619),
+('@app-frontend/site/reset-password', 2, NULL, NULL, NULL, 1514325619, 1514325619),
+('@app-frontend/site/signup', 2, NULL, NULL, NULL, 1514325619, 1514325619),
 ('Admin', 1, 'Administrator', NULL, NULL, 1513725805, 1513726061),
 ('Customer', 1, 'Customer', NULL, NULL, 1513725841, 1513726381);
 
@@ -135,28 +359,121 @@ CREATE TABLE IF NOT EXISTS `auth_item_child` (
 --
 
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
-('Admin', '/shop/*'),
-('Admin', '/shop/create'),
-('Admin', '/shop/delete'),
-('Admin', '/shop/index'),
-('Admin', '/shop/update'),
-('Admin', '/shop/view'),
-('Admin', '/site/*'),
-('Customer', '/site/*'),
-('Admin', '/site/error'),
-('Customer', '/site/error'),
-('Admin', '/site/index'),
-('Customer', '/site/index'),
-('Admin', '/site/login'),
-('Customer', '/site/login'),
-('Admin', '/site/logout'),
-('Customer', '/site/logout'),
-('Admin', '/user/*'),
-('Admin', '/user/create'),
-('Admin', '/user/delete'),
-('Admin', '/user/index'),
-('Admin', '/user/update'),
-('Admin', '/user/view');
+('Admin', '@app-backend/*'),
+('Admin', '@app-backend/admin/*'),
+('Admin', '@app-backend/admin/assignment/*'),
+('Admin', '@app-backend/admin/assignment/assign'),
+('Admin', '@app-backend/admin/assignment/index'),
+('Admin', '@app-backend/admin/assignment/revoke'),
+('Admin', '@app-backend/admin/assignment/view'),
+('Admin', '@app-backend/admin/default/*'),
+('Admin', '@app-backend/admin/default/index'),
+('Admin', '@app-backend/admin/menu/*'),
+('Admin', '@app-backend/admin/menu/create'),
+('Admin', '@app-backend/admin/menu/delete'),
+('Admin', '@app-backend/admin/menu/index'),
+('Admin', '@app-backend/admin/menu/update'),
+('Admin', '@app-backend/admin/menu/view'),
+('Admin', '@app-backend/admin/permission/*'),
+('Admin', '@app-backend/admin/permission/assign'),
+('Admin', '@app-backend/admin/permission/create'),
+('Admin', '@app-backend/admin/permission/delete'),
+('Admin', '@app-backend/admin/permission/index'),
+('Admin', '@app-backend/admin/permission/remove'),
+('Admin', '@app-backend/admin/permission/update'),
+('Admin', '@app-backend/admin/permission/view'),
+('Admin', '@app-backend/admin/role/*'),
+('Admin', '@app-backend/admin/role/assign'),
+('Admin', '@app-backend/admin/role/create'),
+('Admin', '@app-backend/admin/role/delete'),
+('Admin', '@app-backend/admin/role/index'),
+('Admin', '@app-backend/admin/role/remove'),
+('Admin', '@app-backend/admin/role/update'),
+('Admin', '@app-backend/admin/role/view'),
+('Admin', '@app-backend/admin/route/*'),
+('Admin', '@app-backend/admin/route/assign'),
+('Admin', '@app-backend/admin/route/create'),
+('Admin', '@app-backend/admin/route/index'),
+('Admin', '@app-backend/admin/route/refresh'),
+('Admin', '@app-backend/admin/route/remove'),
+('Admin', '@app-backend/admin/rule/*'),
+('Admin', '@app-backend/admin/rule/create'),
+('Admin', '@app-backend/admin/rule/delete'),
+('Admin', '@app-backend/admin/rule/index'),
+('Admin', '@app-backend/admin/rule/update'),
+('Admin', '@app-backend/admin/rule/view'),
+('Admin', '@app-backend/admin/user/*'),
+('Admin', '@app-backend/admin/user/activate'),
+('Admin', '@app-backend/admin/user/change-password'),
+('Admin', '@app-backend/admin/user/delete'),
+('Admin', '@app-backend/admin/user/index'),
+('Admin', '@app-backend/admin/user/login'),
+('Admin', '@app-backend/admin/user/logout'),
+('Admin', '@app-backend/admin/user/request-password-reset'),
+('Admin', '@app-backend/admin/user/reset-password'),
+('Admin', '@app-backend/admin/user/signup'),
+('Admin', '@app-backend/admin/user/view'),
+('Admin', '@app-backend/gii/*'),
+('Admin', '@app-backend/gii/default/*'),
+('Admin', '@app-backend/gii/default/action'),
+('Admin', '@app-backend/gii/default/diff'),
+('Admin', '@app-backend/gii/default/index'),
+('Admin', '@app-backend/gii/default/preview'),
+('Admin', '@app-backend/gii/default/view'),
+('Admin', '@app-backend/shop/*'),
+('Admin', '@app-backend/shop/create'),
+('Admin', '@app-backend/shop/delete'),
+('Admin', '@app-backend/shop/index'),
+('Admin', '@app-backend/shop/update'),
+('Admin', '@app-backend/shop/view'),
+('Admin', '@app-backend/site/*'),
+('Admin', '@app-backend/site/error'),
+('Admin', '@app-backend/site/index'),
+('Admin', '@app-backend/site/login'),
+('Admin', '@app-backend/site/logout'),
+('Admin', '@app-backend/user/*'),
+('Admin', '@app-backend/user/create'),
+('Admin', '@app-backend/user/delete'),
+('Admin', '@app-backend/user/index'),
+('Admin', '@app-backend/user/update'),
+('Admin', '@app-backend/user/view'),
+('Admin', '@app-frontend/*'),
+('Customer', '@app-frontend/*'),
+('Admin', '@app-frontend/action/*'),
+('Customer', '@app-frontend/action/*'),
+('Admin', '@app-frontend/action/dislike'),
+('Customer', '@app-frontend/action/dislike'),
+('Admin', '@app-frontend/action/like'),
+('Customer', '@app-frontend/action/like'),
+('Admin', '@app-frontend/action/remove'),
+('Customer', '@app-frontend/action/remove'),
+('Admin', '@app-frontend/like/*'),
+('Admin', '@app-frontend/like/create'),
+('Admin', '@app-frontend/like/delete'),
+('Admin', '@app-frontend/site/*'),
+('Customer', '@app-frontend/site/*'),
+('Admin', '@app-frontend/site/about'),
+('Customer', '@app-frontend/site/about'),
+('Admin', '@app-frontend/site/captcha'),
+('Customer', '@app-frontend/site/captcha'),
+('Admin', '@app-frontend/site/contact'),
+('Customer', '@app-frontend/site/contact'),
+('Admin', '@app-frontend/site/error'),
+('Customer', '@app-frontend/site/error'),
+('Admin', '@app-frontend/site/index'),
+('Customer', '@app-frontend/site/index'),
+('Admin', '@app-frontend/site/login'),
+('Customer', '@app-frontend/site/login'),
+('Admin', '@app-frontend/site/logout'),
+('Customer', '@app-frontend/site/logout'),
+('Admin', '@app-frontend/site/preferred'),
+('Customer', '@app-frontend/site/preferred'),
+('Admin', '@app-frontend/site/request-password-reset'),
+('Customer', '@app-frontend/site/request-password-reset'),
+('Admin', '@app-frontend/site/reset-password'),
+('Customer', '@app-frontend/site/reset-password'),
+('Admin', '@app-frontend/site/signup'),
+('Customer', '@app-frontend/site/signup');
 
 -- --------------------------------------------------------
 
@@ -176,19 +493,54 @@ CREATE TABLE IF NOT EXISTS `auth_rule` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `like`
+-- Table structure for table `dislikes`
 --
 
-DROP TABLE IF EXISTS `like`;
-CREATE TABLE IF NOT EXISTS `like` (
+DROP TABLE IF EXISTS `dislikes`;
+CREATE TABLE IF NOT EXISTS `dislikes` (
   `user_id` int(11) NOT NULL,
   `shop_id` int(11) NOT NULL,
-  `date_add` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` tinyint(2) NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `nbr` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`,`shop_id`),
   KEY `user_id` (`user_id`),
   KEY `shop_id` (`shop_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `likes`
+--
+
+DROP TABLE IF EXISTS `likes`;
+CREATE TABLE IF NOT EXISTS `likes` (
+  `user_id` int(11) NOT NULL,
+  `shop_id` int(11) NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` tinyint(2) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`user_id`,`shop_id`),
+  KEY `user_id` (`user_id`),
+  KEY `shop_id` (`shop_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`user_id`, `shop_id`, `date`, `status`) VALUES
+(1, 85, '2017-12-27 23:01:12', 1),
+(1, 127, '2017-12-27 22:58:57', 1),
+(1, 208, '2017-12-28 00:08:31', 0),
+(1, 253, '2017-12-27 22:59:51', 1),
+(1, 278, '2017-12-28 00:00:54', 1),
+(1, 313, '2017-12-27 22:57:44', 1),
+(1, 327, '2017-12-27 22:59:32', 1),
+(1, 332, '2017-12-27 23:01:09', 1),
+(1, 338, '2017-12-27 23:00:35', 1),
+(2, 313, '2017-12-28 00:23:50', 1),
+(3, 313, '2017-12-28 00:28:34', 0),
+(3, 327, '2017-12-28 00:28:36', 0);
 
 -- --------------------------------------------------------
 
@@ -619,14 +971,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'hakim', 'JRamlUy_nL4TNKN5RYJGv4xP8WCRXj39', '$2y$13$PvZEdj0WjF2MchkUtujR5O3baSrwANR6q40yv.VfDWdszf6r8kHSS', NULL, 'benallouhakim0@gmail.com', 10, 1513440751, 1513440751);
+(1, 'hakim', 'JRamlUy_nL4TNKN5RYJGv4xP8WCRXj39', '$2y$13$PvZEdj0WjF2MchkUtujR5O3baSrwANR6q40yv.VfDWdszf6r8kHSS', NULL, 'benallouhakim0@gmail.com', 10, 1513440751, 1513440751),
+(2, 'utilisateur', 'SYo9TnoC0QIGwQz25J9Urbryt27Z44p6', '$2y$13$EZ2hDmQqbQD088kOHTSZMu3VV9CJwufIOnawlQ8rcRRn/KHWO0IBO', NULL, 'util@gmail.com', 10, 1514419761, 1514419761),
+(3, 'user', 'w_zhpDWuyfVmbS6ZYsAoYFpfYI0JLycy', '$2y$13$DBu02KwIZpxihCCL/4OOT.dsSCLLNcrkpZBGCqclTRsgpKQrOa/bG', NULL, 'email@email.com', 10, 1514420902, 1514420902);
 
 --
 -- Constraints for dumped tables
@@ -652,11 +1006,18 @@ ALTER TABLE `auth_item_child`
   ADD CONSTRAINT `auth_item_child_ibfk_2` FOREIGN KEY (`child`) REFERENCES `auth_item` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `like`
+-- Constraints for table `dislikes`
 --
-ALTER TABLE `like`
-  ADD CONSTRAINT `like_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `like_ibfk_2` FOREIGN KEY (`shop_id`) REFERENCES `shop` (`shop_id`);
+ALTER TABLE `dislikes`
+  ADD CONSTRAINT `dislikes_ibfk_1` FOREIGN KEY (`shop_id`) REFERENCES `shop` (`shop_id`),
+  ADD CONSTRAINT `dislikes_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
+-- Constraints for table `likes`
+--
+ALTER TABLE `likes`
+  ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`shop_id`) REFERENCES `shop` (`shop_id`);
 
 --
 -- Constraints for table `menu`
@@ -665,6 +1026,4 @@ ALTER TABLE `menu`
   ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `menu` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
